@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="比特币——一个点对点的电子现金系统 比特币白皮书原文   Satoshi Nakamoto&amp;#x73;&amp;#x61;&amp;#x74;&amp;#111;&amp;#x73;&amp;#x68;&amp;#x69;&amp;#110;&amp;#x40;&amp;#103;&amp;#x6d;&amp;#x78;&amp;#46;&amp;#x63;&amp;#111;&amp;#109;www.bitcoin.org  摘要本文提出了一个纯粹点对点版本的电子现金系统，实现了在无需经过第三方金融机构的情形下">
+    <meta name="description" content="比特币——一个点对点的电子现金系统 比特币白皮书原文   Satoshi Nakamoto&amp;#115;&amp;#97;&amp;#116;&amp;#x6f;&amp;#x73;&amp;#x68;&amp;#105;&amp;#110;&amp;#x40;&amp;#x67;&amp;#x6d;&amp;#x78;&amp;#46;&amp;#x63;&amp;#111;&amp;#x6d;www.bitcoin.org  摘要本文提出了一个纯粹点对点版本的电子现金系统，实现了在无需经过第三方金融机构的情形下，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="比特币白皮书翻译">
 <meta property="og:url" content="https://github.com/applefighting/applefighting.github.io.git/2020/08/11/%E6%AF%94%E7%89%B9%E5%B8%81%E7%99%BD%E7%9A%AE%E4%B9%A6%E7%BF%BB%E8%AF%91/index.html">
 <meta property="og:site_name" content="Hello">
-<meta property="og:description" content="比特币——一个点对点的电子现金系统 比特币白皮书原文   Satoshi Nakamoto&amp;#x73;&amp;#x61;&amp;#x74;&amp;#111;&amp;#x73;&amp;#x68;&amp;#x69;&amp;#110;&amp;#x40;&amp;#103;&amp;#x6d;&amp;#x78;&amp;#46;&amp;#x63;&amp;#111;&amp;#109;www.bitcoin.org  摘要本文提出了一个纯粹点对点版本的电子现金系统，实现了在无需经过第三方金融机构的情形下">
+<meta property="og:description" content="比特币——一个点对点的电子现金系统 比特币白皮书原文   Satoshi Nakamoto&amp;#115;&amp;#97;&amp;#116;&amp;#x6f;&amp;#x73;&amp;#x68;&amp;#105;&amp;#110;&amp;#x40;&amp;#x67;&amp;#x6d;&amp;#x78;&amp;#46;&amp;#x63;&amp;#111;&amp;#x6d;www.bitcoin.org  摘要本文提出了一个纯粹点对点版本的电子现金系统，实现了在无需经过第三方金融机构的情形下，">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://github.com/applefighting/applefighting.github.io.git/2020/08/11/%E6%AF%94%E7%89%B9%E5%B8%81%E7%99%BD%E7%9A%AE%E4%B9%A6%E7%BF%BB%E8%AF%91/siging.png">
 <meta property="og:image" content="https://github.com/applefighting/applefighting.github.io.git/2020/08/11/%E6%AF%94%E7%89%B9%E5%B8%81%E7%99%BD%E7%9A%AE%E4%B9%A6%E7%BF%BB%E8%AF%91/timestamp.png">
@@ -79,8 +79,6 @@
           <li><a href="/about/">关于</a></li>
          
           <li><a href="/archives/">归档</a></li>
-         
-          <li><a href="https://github.com/applefighting/applefighting.github.io">项目</a></li>
         
       </ul>
     </span>
@@ -162,7 +160,7 @@
 <p><a target="_blank" rel="noopener" href="https://bitcoin.org/bitcoin.pdf">比特币白皮书原文</a></p>
 </blockquote>
 <blockquote>
-<p>Satoshi Nakamoto<br><a href="mailto:&#x73;&#x61;&#x74;&#111;&#x73;&#x68;&#x69;&#110;&#x40;&#103;&#x6d;&#x78;&#46;&#x63;&#111;&#109;">&#x73;&#x61;&#x74;&#111;&#x73;&#x68;&#x69;&#110;&#x40;&#103;&#x6d;&#x78;&#46;&#x63;&#111;&#109;</a><br><a target="_blank" rel="noopener" href="http://www.bitcoin.org/">www.bitcoin.org</a></p>
+<p>Satoshi Nakamoto<br><a href="mailto:&#115;&#97;&#116;&#x6f;&#x73;&#x68;&#105;&#110;&#x40;&#x67;&#x6d;&#x78;&#46;&#x63;&#111;&#x6d;">&#115;&#97;&#116;&#x6f;&#x73;&#x68;&#105;&#110;&#x40;&#x67;&#x6d;&#x78;&#46;&#x63;&#111;&#x6d;</a><br><a target="_blank" rel="noopener" href="http://www.bitcoin.org/">www.bitcoin.org</a></p>
 </blockquote>
 <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>本文提出了一个纯粹点对点版本的电子现金系统，实现了在无需经过第三方金融机构的情形下，从交易的一方直接支付到另一方的线上交易方式。数字签名技术为该系统的提供了部分解决方案，但如果交易依旧需要信任一个第三方来防止双重支付的话，所需的主要优势还是缺失的。我们提出了一个在点对点网络中解决双重支付问题的方案。该网络通过哈希的方式来为交易添加时间戳，并将时间戳处理后的交易添加到一条不断发展的基于哈希函数的工作量证明机制的链上，这样就创建了一个除非重新进行工作量证明的运算，否则无法被更改的交易账本。最长链将不仅是见证交易事件顺序的证明，同时说明该链是集合了最多CPU算力工作的成果。只要大多数CPU算力是被无意于联合起来攻击网络的节点所拥有，这些算力将会不断发展最长的链，进而领先于攻击者。该网络自身仅需要最简化的结构体系。信息是基于最大的努力在网络中进行广播的，节点可以随时退出和加入网络，退出后又加入网络的节点可以从拥有最长工作量证明的链上来获取他们不在网络中时所发生交易的记录。</p>
 <h1 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1.介绍"></a>1.介绍</h1><p>网络上的贸易已经发展到了一个对金融机构作为可信第三方的绝对依赖来进行展电子支付的程度。尽管这样的系统目前来说对于大多数交易来说运行良好，但是因其固有的基于信任模型的弱点，而依旧存在着不足。因为金融机构不可避免的需要进行调节纠纷，完全不可逆的交易是不太可能实现的。调节纠纷的需求增加了交易成本，限制了交易的最小规模，也阻碍了小额零散交易的可能性，同时为那些不可逆的贸易服务提供不可逆交易能力的缺失所带来的损失也是巨大的。因为交易可逆性的存在，对于信任的需求就增加了。商家必须对他们的客户十分警惕，要求用户提供更多本来并不需要的信息。因为无法完全避免欺诈的发生，就要接受一定比例的欺诈行为存在。这些交易成本支出和不确定性可以通过使用实物现金来避免，但是要通过线上信息交流的渠道来创建一个不需可信第三方的交易，目前我们还没有可以来实现的机制。<br>我们需要的是一种建立在以加密技术的证明来代替信任背书的电子支付系统，使得任何有意向交易的双方可以直接进行价值的转移，而不是通过信任一个第三方机构来完成交易。在这样的支付系统中，计算机运算上不可逆改的交易记录，可以保护卖家免受欺诈，同时可以实施常规的托管机制来保护买家。本文中，我们提出了一种依托点对点的分布式时间戳服务系统，该系统通过计算机的运算工作来生成一份按时间顺序排列的交易记录的方式来解决双重花费问题。系统的安全性则是通过诚实的运算节点控制比任何攻击性竞争团体多的CPU算力来确保的。</p>
@@ -240,8 +238,6 @@
           <li><a href="/about/">关于</a></li>
          
           <li><a href="/archives/">归档</a></li>
-         
-          <li><a href="https://github.com/applefighting/applefighting.github.io">项目</a></li>
         
       </ul>
     </div>
@@ -283,7 +279,7 @@
     Copyright &copy;
     
     
-    2016-2020
+    2018-2020
     Jason Li
   </div>
   <div class="footer-right">
@@ -295,8 +291,6 @@
           <li><a href="/about/">关于</a></li>
          
           <li><a href="/archives/">归档</a></li>
-         
-          <li><a href="https://github.com/applefighting/applefighting.github.io">项目</a></li>
         
       </ul>
     </nav>
